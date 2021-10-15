@@ -1,0 +1,15 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item flexibility="auto" padding="around-small">
+            <c-search-bar onsortchange={handleSort} onsearchchange={handleSearchTerm}></c-search-bar>
+            <c-homepage-products onrefresh={refresh} search-term={searchTerm} tile={tile}></c-homepage-products>
+        </lightning-layout-item>
+        <template if:true={orders}>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <c-order-component showid={showid} orders={orders} ondelete={refresh}></c-order-component>
+            </lightning-layout-item>
+            
+        </template>
+
+    </lightning-layout>
+</template>

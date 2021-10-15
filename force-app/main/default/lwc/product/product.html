@@ -1,0 +1,18 @@
+<template>
+    <template if:true={product}>
+        <div class="tile-Wrapper slds-media ">
+            <div style={backgroundStyle} class="tile slds-media__figure"></div>
+            <div class="lower-third slds-media__body" >
+              <h1 class="slds-truncate slds-text-heading_medium">{name}</h1>
+              <h2 class="slds-truncate slds-text-heading_small">{family}</h2>
+            <div class="slds-text-body_medium">Price: <lightning-formatted-number value={price} format-style="currency" maximum-fraction-digits="2"></lightning-formatted-number></div>
+            <div class="slds-p-top_small">
+            <lightning-button variant="Brand" label="Add to Cart" title="Add to Cart" icon-name="utility:cart" onclick={addCart}></lightning-button>
+            </div>
+            <h1 class="slds-text-heading_medium slds-p-top_medium" >Description:</h1>
+            <div class="slds-text-body_small slds-p-top_small" >{description} </div>
+            </div>
+        </div>
+    </template>
+
+</template>

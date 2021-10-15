@@ -1,0 +1,16 @@
+<template>
+    <div class="tile-Wrapper slds-media ">
+        <div style={backgroundStyle} class="tile slds-media__figure"></div>
+        <div class="lower-third slds-media__body" >
+          <h1 class="slds-truncate slds-text-heading_medium">{item.Product__r.Name}</h1>
+          <h2 if:true={showid} class="slds-truncate slds-text-heading_small">Id: {item.Id}</h2>
+          <h2 class="slds-truncate slds-text-heading_small">Quantity: {item.Quantity__c}</h2>
+        <div class="slds-text-body_medium">Price: <lightning-formatted-number value={item.Product__r.Price__c} format-style="currency" maximum-fraction-digits="2"></lightning-formatted-number></div>
+        <div class="slds-text-body_medium">Item Total: <lightning-formatted-number value={item.Cart_Item_Total__c} format-style="currency" maximum-fraction-digits="2"></lightning-formatted-number></div>
+        <lightning-button-group class="slds-p-top_small">
+        <lightning-button variant="Brand" icon-name="utility:cart" onclick={addCart}></lightning-button>
+        <lightning-button-icon variant="border-filled" alternative-text="Product Info"  title="Product Info" onclick={redirectToDetails} icon-name="utility:info" ></lightning-button-icon>
+        </lightning-button-group>
+        </div>
+    </div>
+</template>

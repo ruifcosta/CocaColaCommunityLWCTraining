@@ -1,0 +1,14 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item flexibility="auto" padding="around-small">
+            <c-product record-id={recordId}></c-product>
+        </lightning-layout-item>
+        <template if:true={orders}>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <c-order-component orders={orders}></c-order-component>
+            </lightning-layout-item>
+            
+        </template>
+
+    </lightning-layout>
+</template>

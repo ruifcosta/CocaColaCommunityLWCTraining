@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout multiple-rows="true" pull-to-boundary="small">
+        <template for:each={products} for:item="product">
+            <template if:true={tile}>
+                <lightning-layout-item key={product.Id} size="3" class="slds-var-p-around_x-small">
+                    <c-product-tile tile={tile} product={product} ></c-product-tile>
+                </lightning-layout-item>
+            </template>
+            <template if:false={tile}>
+                <lightning-layout-item key={product.Id} size="12" class="slds-var-p-around_x-small">
+                    <c-product-tile title={tile} product={product} ></c-product-tile>
+                </lightning-layout-item>
+            </template>
+        </template>
+    </lightning-layout>
+</template>

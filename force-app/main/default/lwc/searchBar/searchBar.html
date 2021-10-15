@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <lightning-input type="search"
+                onchange={handleSearchTermChange}
+                variant="label-hidden"
+                class="slds-var-m-bottom_small "
+                label="Search"
+                placeholder="Search for Products"
+                value={searchTerm}>
+            </lightning-input>
+            </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <lightning-combobox
+            name="Sort"
+            label="Sort By:"
+            value={value}
+            placeholder="None"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>

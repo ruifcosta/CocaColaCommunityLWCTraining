@@ -1,0 +1,22 @@
+<template>
+    <template if:true={orders}>
+        <lightning-card class="cart-item" title="Cart Items" icon-name="standard:webcart">
+            <lightning-button label="Delete Cart Items" slot="actions" onclick={deleteItems}></lightning-button>
+            <ul class="slds-m-around_medium">
+                <template for:each={orders} for:item="item">
+                    <div key={item.Id} class="slds-m-around_medium">
+                        <c-order-items showid={showid} item={item}></c-order-items>
+                    </div>
+                    
+                </template>
+                <div class="slds-text-align_right slds-text-heading_medium">Cart Total: <lightning-formatted-number value={cartTotal} format-style="currency" maximum-fraction-digits="2"></lightning-formatted-number></div>
+            </ul>
+        </lightning-card>
+    </template>
+<template if:false={orders}>
+    <lightning-card class="cart-item" title="Cart Items" icon-name="standard:webcart">
+        <p class="slds-text-align_center slds-text-heading_medium">No Items In Your Cart</p>
+    </lightning-card>
+
+</template>
+</template>
